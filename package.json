@@ -1,0 +1,18 @@
+{
+  "name": "Rocketseat-Ignite-ReactJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Hugovarellaa/Rocketseat-Ignite-ReactJS.git",
+  "author": "Hugo Alves Varella <71407198+Hugovarellaa@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5"
+  }
+}
