@@ -85,4 +85,21 @@
 
   border: 0;
   border-radius: 5px;
+
+  color: var(--white);
+  
+  font-size: 1rem;
+  font-weight: 600;
+  
+  transition: filter .2s;
+}
+.challengeBoxActive footer button.challengeFailedButton{
+  background-color: var(--red);
+  
+}
+.challengeBoxActive footer button.challengeSuceededButton{
+  background-color: var(--green);
+}
+.challengeBoxActive footer button:hover{
+  filter: brightness(0.8);
 }
