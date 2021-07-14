@@ -4,6 +4,8 @@ import styles from "../styles/components/CounteDown.module.css";
 let countcouwnTimeout: NodeJS.Timeout;
 
 export function CounteDown() {
+ 
+  
   const [time, setTime] = useState(0.1 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
