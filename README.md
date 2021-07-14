@@ -17,9 +17,11 @@
 
 <br>
 
+<!--Foto da aplicação
 <p align="center">
   <img alt="Happy" src="public/happy.png" width="100%">
 </p>
+-->
 
 ## ✨ Tecnologias
 
@@ -44,4 +46,3 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 - Inicie o servidor com `yarn dev`
 
 Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
-
