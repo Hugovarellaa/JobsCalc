@@ -3,14 +3,12 @@ import styles from "../styles/components/CounteDown.module.css";
 
 export function CounteDown() {
   const [time, setTime] = useState(25 * 60);
-  const [active ,setActive] = useState(false); 
+  const [active, setActive] = useState(false);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
-  const [minuteLeft, minuteRight] = String(minutes)
-   .padStart(2, "0")
-    .split("");
+  const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
   const [secondsLeft, secondsRight] = String(seconds)
     .padStart(2, "0")
     .split("");
@@ -19,13 +17,13 @@ export function CounteDown() {
     setActive(true);
   }
 
-  useEffect(()=>{
-    if (active && time > 0){
-      setTimeout(()=>{
-        setTime(time -1)
-      },1000)
+  useEffect(() => {
+    if (active && time > 0) {
+      setTimeout(() => {
+        setTime(time - 1);
+      }, 1000);
     }
-  } , [active, time])
+  }, [active, time]);
 
   return (
     <div>
