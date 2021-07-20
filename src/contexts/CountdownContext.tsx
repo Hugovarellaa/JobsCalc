@@ -53,7 +53,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       setIsActive(false);
       startNewChallege();
     }
-  }, [isActive, time]);
+  },  [isActive, time]);
 
   return (
     <CountdownContext.Provider
