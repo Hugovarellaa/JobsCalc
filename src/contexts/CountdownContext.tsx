@@ -38,9 +38,9 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   }
   function resetCountDown() {
     clearTimeout(countcouwnTimeout);
-    setTime(25 * 60);
+    setTime(0.1 * 60);
     setIsActive(false);
-    setHasFinished(false)
+    setHasFinished(false);
   }
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       setIsActive(false);
       startNewChallege();
     }
-  },  [isActive, time]);
+  }, [isActive, time]);
 
   return (
     <CountdownContext.Provider

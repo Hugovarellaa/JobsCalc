@@ -17,11 +17,12 @@
 
 <br>
 
-<!--Foto da aplicação
+
 <p align="center">
-  <img alt="Happy" src="public/happy.png" width="100%">
+  <img alt="Happy" src="public/tela.png" width="100%">
+  <img alt="Happy" src="public/tela2.png" width="100%">
 </p>
--->
+
 
 ## ✨ Tecnologias
 
