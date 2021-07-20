@@ -7,8 +7,9 @@ import styles from "../styles/pages/Home.module.css";
 import Head from "next/head";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
+import { GetServerSideProps } from "next";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <ExperenceBar />
@@ -30,3 +31,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async (ctx) => {
+  const user = {
+    level: 1,
+    currentExperience: 50,
+    ChallengesCompleted: 2,
+  };
+  console.log(user);
+  return {
+    props: user,
+  };
+};
