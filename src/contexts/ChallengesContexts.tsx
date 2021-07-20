@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import challenges from "../../challenges.json";
+import { LevLeveUpModal } from "../components/LeveUpModal";
 
 interface challenge {
   type: "body" | "eye";
@@ -97,6 +98,8 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       }}
     >
       {children}
+
+      <LevLeveUpModal />
     </ChallengesContext.Provider>
   );
 }
