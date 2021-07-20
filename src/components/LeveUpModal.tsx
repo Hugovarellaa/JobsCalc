@@ -8,7 +8,9 @@ export function LevLeveUpModal() {
         <strong>Parabens</strong>
         <p>Voce Alcançou um novo level.</p>
 
-        <button type="button"></button>
+        <button type="button">
+          <img src="/icons/clise.svg" alt="Fecha Modal" />
+        </button>
       </div>
     </div>
   );
