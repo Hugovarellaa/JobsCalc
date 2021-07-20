@@ -39,3 +39,10 @@
   color: var(--text);
   margin-top: 0.25rem;
 }
+.container button{
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: transparent;
+  border: 0;
+}
