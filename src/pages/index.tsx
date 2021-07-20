@@ -8,10 +8,12 @@ import Head from "next/head";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
+import { ChallengesProvider } from "../contexts/ChallengesContexts";
 
 export default function Home(props) {
-  console.log(props)
+  
   return (
+    <ChallengesProvider>
     <div className={styles.container}>
       <ExperenceBar />
       <Head>
@@ -30,6 +32,7 @@ export default function Home(props) {
         </section>
       </CountdownProvider>
     </div>
+    </ChallengesProvider>
   );
 }
 
