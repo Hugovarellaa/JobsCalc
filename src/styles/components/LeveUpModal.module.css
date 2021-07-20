@@ -27,4 +27,10 @@
   font-weight: 600;
   color: var(--blue);
   background: url('/icons/levelup.svg') no-repeat center ;
+  background-size: contain;
+}
+
+.container strong {
+  font-size: 2.25rem;
+  color: var(--title);
 }
