@@ -19,7 +19,8 @@ interface CountdownProviderProps {
   children: ReactNode;
 }
 
-const CountdownContext = createContext({} as CountdownContextData);
+export const CountdownContext = createContext({} as CountdownContextData);
+
 let countcouwnTimeout: NodeJS.Timeout;
 
 export function CountdownProvider({ children }: CountdownProviderProps) {
@@ -54,8 +55,17 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   }, [isActive, time]);
 
   return (
-    <CountdownContext.Provider value={{}}>
-      minutes, seconds, hasFinished, isActive, startCountDown, resetCountDown,
+    <CountdownContext.Provider
+      value={{
+        minutes,
+        seconds,
+        hasFinished,
+        isActive,
+        startCountDown,
+        resetCountDown,
+      }}
+    >
+      {children}
     </CountdownContext.Provider>
   );
 }
