@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import challenges from "../../challenges.json";
-
 
 interface challenge {
   type: "body" | "eye";
@@ -21,28 +20,30 @@ interface ChallengesContextData {
 }
 interface ChallengesProviderProps {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  challegesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children }: ChallengesProviderProps) {
-  const [level, setLevel] = useState(1);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challegesCompleted, setChallegesCompleted] = useState(0);
+export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challegesCompleted, setChallegesCompleted] = useState(rest.challegesCompleted ?? 0);
   const [activeChallenge, setActiveChallenge] = useState(null);
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
-useEffect(()=>{
-  Cookies.set('level' , String(level))
-  Cookies.set('currentExperience' , String(currentExperience))
-  Cookies.set('challegesCompleted' , String(challegesCompleted))
+  useEffect(() => {
+    Cookies.set("level", String(level));
+    Cookies.set("currentExperience", String(currentExperience));
+    Cookies.set("challegesCompleted", String(challegesCompleted));
+  }, [level, currentExperience, challegesCompleted]);
 
-},[level, currentExperience, challegesCompleted])
-
-  useEffect(()=>{
-    Notification.requestPermission()
-  },[])
+  useEffect(() => {
+    Notification.requestPermission();
+  }, []);
 
   function levelUp() {
     setLevel(level + 1);
@@ -52,11 +53,11 @@ useEffect(()=>{
     const challenge = challenges[randomChallengesIndex];
     setActiveChallenge(challenge);
 
-    new Audio('/notification.mp3').play();
-    if(Notification.permission === 'granted'){
-      new Notification('Novo desafio 🎉', {
-        body: `Valendo ${challenge.amount} xp!`
-      })
+    new Audio("/notification.mp3").play();
+    if (Notification.permission === "granted") {
+      new Notification("Novo desafio 🎉", {
+        body: `Valendo ${challenge.amount} xp!`,
+      });
     }
   }
 
