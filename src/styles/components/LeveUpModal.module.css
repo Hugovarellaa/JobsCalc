@@ -10,3 +10,10 @@
   align-items: center;
   justify-content:center;
 }
+
+.container{
+  background: var(--white);
+  width: 100%;
+  max-width:400px;
+  padding: 2rem 3rem;
+}
