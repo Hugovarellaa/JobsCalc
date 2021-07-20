@@ -32,7 +32,7 @@ export default function Home(props) {
   );
 }
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const user = {
     level: 1,
     currentExperience: 50,
