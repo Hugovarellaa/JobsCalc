@@ -136,3 +136,59 @@
   * [x] lastId of Job.controller.create()
   * [x] use optional chaining operator ?.
   * [x] use Logical OR operator
+
+## Parte 3
+
+## Refatorar
+
+- [x] Sinalizar local da pasta views no server
+- [x] Importar Path no server
+- [x] Refatorar routes para nova forma de chamar views
+
+## Refatorar Profile
+
+    * [X] Separar controller
+
+- [x] Criar model
+  - [x] Separar data
+  - [x] Criar get no model
+  - [x] Importar model Profile no ProfileController
+  - [x] Refaotrar Profile.data para Profile.get()
+  - [x] Refatorar update do profile no model
+
+## Refatorar Job
+
+    * [X] Mover controller para JobController
+    * [X] Criar pasta utils
+    * [X] Mover services de job para utils
+    * [X] Importar utils dentro de jobController
+    * [X] Refatorar chamada de job services para JobUtils
+
+- [x] Mover Job data para model Job
+  - [x] Importar model Job dentro de Jobcontroller
+  - [x] Refatorar chamadas de job.data para Job
+  - [x] Criar update no model recebendo newData
+  - [x] Criar delete no model
+
+## Refatorar Dashboard
+
+    * [X] Passar index do JobController para DashboardController
+    * [X] Refatorar a chamada da rota "/" no routes
+    * [X] Importar model Job
+
+- [x] Importar model Profile
+  - [x] Importar JobUtils
+  - [x] Refatorar chamadas de profile, job e utils
+  - [x] Passar profile para index.ejs
+- [x] Refatorar os dados de profile no index.ejs
+- [x] Criar StatusCount
+  - [x] Passar StatusCount para index.ejs
+  - [x] Refatorar os dados de contagem de status no index.ejs
+- [x] Calcular freeHours
+  - [x] Passar freehours para index.ejs
+  - [x] Refatorar dados de freehours no index.ejs
+  - [x] Ajuste o alinhamento de campos de perfil
+
+## Banco de dados
+
+    * [X] Como funciona banco de dados e tabelas
