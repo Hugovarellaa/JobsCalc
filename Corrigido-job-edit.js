@@ -23,17 +23,20 @@
       rel="stylesheet"
     />
 
-    <script type="module" src="./scripts/job-edit.js"></script>
+    <script type="module" src="/scripts/job-edit.js"></script>
     
   </head>
   <body id="page-job-edit">
-
-    <%- include("parts/header.ejs" , {title: "Editar Job"}) %>
     
+    <%- include('parts/header', { title: 'Editar Job'}) %>
 
     <div class="container flex animate-up delay-2">
 
-        <form id="form-job" action="/job/<%= job.id  %> " method="POST">
+""
+        <form id="form-job" 
+        method="post"
+        action="/job/<%= job.id %>">
+
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
@@ -44,12 +47,11 @@
                 type="text" 
                 id="name" 
                 name="name"
-                value="<%= job.name  %>"
+                value="<%= job.name %> "
               />
             </div>
 
             <div class="input-group">
-
               <div class="input-wrapper">
                 <label for="daily-hours">Quantas horas <br/>
                   por dia vai dedicar ao job?</label>
@@ -58,7 +60,7 @@
                   step="0.1" 
                   id="daily-hours" 
                   name="daily-hours"
-                  value="<%= job["daily-hours"]  %>"/>
+                  value="<%= job["daily-hours"] %>"/>
               </div>
 
               <div class="input-wrapper">
@@ -68,7 +70,7 @@
                   type="number"
                   id="total-hours" 
                   name="total-hours"
-                  value="<%= job["total-hours"]  %>" />
+                  value="<%= job["total-hours"] %>" />
               </div>
             </div>
           </fieldset>
@@ -78,7 +80,7 @@
       <aside class="card">
         <img src="/images/money-color.svg" alt="Imagem de Dinheiro">
         <p>
-          O valor do projeto ficou em <strong>R$ <%= job.budget.toFixed(2).replace(".", ",")  %> </strong>
+          O valor do projeto ficou em <strong>R$ <%= job.budget.toFixed(2).replace(".", ",") %> </strong>
         </p>
         <div class="button-group">
           <button 
@@ -87,7 +89,7 @@
             type="submit" 
             title="Salvar Dados">Salvar</button>
           <a 
-            href="/" 
+            href="#" 
             class="button gray open-modal"
             >
             <img 
@@ -105,26 +107,22 @@
       <div class="modal">
         <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
         <h3>Excluir Job</h3>
-
         <p>Quer mesmo excluir esse job? <br/>
         Ele será apagado para sempre.  
         </p>
-
         <footer>
           <a 
             class="button gray" 
-            href="/">Cancelar</a>
+            href="#">Cancelar</a>
           <button
             class="button red"
             type="submit"
             form="delete-job">Excluir Job</button>
         </footer>
-        
       </div>
-      
       <form 
         method="post" 
-        action="/job/delete/<%= job.id  %> " 
+        action="/job/delete/<%= job.id %> " 
         id="delete-job"></form>
     </div>
     <!-- end modal-wrapper -->
