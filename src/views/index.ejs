@@ -40,12 +40,9 @@
             <img src="<%= profile.avatar %> " alt="Foto do perfil" />
           </a>
         </section>
-
         <div class="separator"></div>
-
         <section id="summary" class="animate-up delay-1">
           <h2 class="sr-only">Sumário</h2>
-
           <div class="info">
             <div class="total">
               <strong><%= statusCount.total %></strong>
@@ -69,18 +66,14 @@
         </section>
       </div>
     </header>
-
     <div class="container">
       <main class="animate-up delay-2">
         <h1 class="sr-only">Trabalhos</h1>
-
         <div class="cards">
           <% jobs.forEach((job)=> { %>
-
           <div class="card <%= job.status %>" data-id="<%= job.id %>">
             <div class="id column"><%= job.id %></div>
             <div class="name column"><%= job.name %></div>
-
             <div class="deadline column">
               <span>Prazo</span>
               <p>
@@ -109,15 +102,12 @@
               </button>
             </div>
           </div>
-
           <% }) %>
-
           <!-- end card -->
         </div>
       </main>
     </div>
     <!-- end container -->
-
     <div class="modal-wrapper">
       <div class="modal">
         <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
