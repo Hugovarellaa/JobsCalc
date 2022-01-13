@@ -2,8 +2,9 @@ const express = require("express");
 const routes = express.Router();
 const ProfileController = require("./controllers/ProfileController");
 const JobController = require("./controllers/JobController");
+const dashboardController = require("./controllers/DashboardController");
 
-routes.get("/", JobController.index);
+routes.get("/", dashboardController.index);
 
 routes.get("/job", JobController.create);
 routes.post("/job", JobController.save);
