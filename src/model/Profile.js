@@ -1,18 +1,38 @@
-let data = {
-  name: "Hugo Alves Varella",
-  avatar: "https://github.com/Hugovarellaa.png",
-  "monthly-budget": 3000,
-  "hours-per-day": 5,
-  "days-per-week": 6,
-  "vacation-per-year": 4,
-  "value-hour": 75,
-};
+const Database = require("../db/config");
 
 module.exports = {
-  get() {
-    return data;
+  async get() {
+    const db = await Database();
+
+    const data = await db.get(`SELECT * FROM profile`);
+
+    await db.close();
+
+    return {
+      name: data.name,
+      avatar: data.avatar,
+      "monthly-budget": data.monthly_budget,
+      "days-per-week": data.days_per_week,
+      "hours-per-day": data.hours_per_day,
+      "vacation-per-year": data.vacation_per_year,
+      "value-hour": data.value_hour,
+    };
   },
-  update(newDate) {
-    data = newDate;
+  async update(newDate) {
+    const db = await Database();
+
+    db.run(`UPDATE profile SET 
+    name = "${newDate.name}",
+    avatar = "${newDate.avatar}",
+    "monthly_budget" = ${newDate["monthly-budget"]},
+    "days_per_week" = ${newDate["days-per-week"]} ,
+    "hours_per_day" = ${newDate["hours-per-day"]},
+    "vacation_per_year" = ${newDate["vacation-per-year"]},
+    "value_hour" = ${newDate["value-hour"]} 
+  
+    
+    `);
+
+    await db.close();
   },
 };
